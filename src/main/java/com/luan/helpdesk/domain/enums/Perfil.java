@@ -31,7 +31,7 @@ public enum Perfil {
 			}
 		}
 		
-		throw new IllegalArgumentException("Perfil invalido");
+		throw new IllegalArgumentException("Perfil inválido");
 	}
 	
 	
