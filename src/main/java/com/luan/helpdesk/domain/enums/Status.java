@@ -1,13 +1,13 @@
 package com.luan.helpdesk.domain.enums;
 
-public enum Perfil {
+public enum Status {
 	
-	ADMIN(0, "ROLE_ADMIN"), CLIENTE(1, "ROLE_CLIENTE"), TECNICO(2, "ROLE_TECNICO");
+	BAIXA(0, "BAIXA"), MEDIA(1, "MEDIA"), ALTA(2, "ALTA");
 	
 	private Integer codigo;
 	private String descricao;
 	
-	private Perfil(Integer codigo, String descricao) {
+	private Status(Integer codigo, String descricao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 	}
@@ -20,18 +20,18 @@ public enum Perfil {
 		return descricao;
 	}
 	
-	public static Perfil toEnum(Integer cod) {
+	public static Status toEnum(Integer cod) {
 		if(cod == null) {
 			return null;
 		}
 		
-		for(Perfil x :Perfil.values()) {
+		for(Status x :Status.values()) {
 			if(cod.equals(x.getCodigo())) {
 				return x;
 			}
 		}
 		
-		throw new IllegalArgumentException("Perfil invalido");
+		throw new IllegalArgumentException("Prioridade invalida");
 	}
 	
 	
